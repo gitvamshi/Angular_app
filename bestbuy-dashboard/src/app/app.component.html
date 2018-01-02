@@ -1,0 +1,37 @@
+<div class="topnav row">
+  <h1 class="header">Bestbuy Release Services Team</h1>
+  <!--<img style="float: right;" src="https://www.bizcloudexperts.com/wp-content/uploads/2017/08/cropped-BizCloud-Official-Logo-e1502082281597.png">-->
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!--<input type="text" #serverName>-->
+      <!--<button class="btn btn-primary" (click)="onAddServer(serverName.value)">Add Server</button>-->
+      <!--<br><br>-->
+      <!--<button class="btn btn-primary" (click)="onSave()">Save Servers</button>-->
+      <button class="btn btn-primary" (click)="onDev()">Dev Servers</button>
+      <button class="btn btn-primary" (click)="onStage()">Stage Servers</button>
+      <button class="btn btn-primary" (click)="onProd()">Prod Servers</button>
+      <hr>
+      <div  *ngIf="(selectedServer == 'stageServer')">
+        <h4>Staging Applications</h4>
+        <ul class="list-group" *ngFor="let server of stageValues">
+          <li class="list-group-item">Actual Departure: {{ server }}</li>
+        </ul>
+      </div>
+      <div  *ngIf="(selectedServer == 'devServer')">
+        <h4>Devlopment Applications</h4>
+        <ul class="list-group" *ngFor="let server of devValues">
+          <li class="list-group-item">Actual Departure: {{ server }}</li>
+        </ul>
+      </div>
+      <div  *ngIf="(selectedServer == 'prodServer')">
+        <h4>Production Applications</h4>
+        <ul class="list-group" *ngFor="let server of prodValues">
+          <li class="list-group-item">Actual Departure: {{ server }}</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
